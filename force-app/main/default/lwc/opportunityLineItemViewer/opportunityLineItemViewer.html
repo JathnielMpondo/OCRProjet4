@@ -1,0 +1,30 @@
+<template>
+    <template if:true={hasError}>
+      <div class="slds-text-color_error slds-p-around_medium">
+        {errorMessage}
+      </div>
+    </template>
+  
+    <template if:true={hasLines}>
+      <lightning-card title="Produits de l'opportunité">
+        <lightning-datatable
+          key-field="id"
+          data={opportunityLines}
+          columns={columns}
+          hide-checkbox-column
+          class="custom-table">
+        </lightning-datatable>
+      </lightning-card>
+    </template>
+  
+    <template if:false={hasLines}>
+      <div class="slds-text-body_regular slds-p-around_medium no-data-message">
+        Vous n'avez aucune ligne de produits pour le moment.<br />
+        1- Veuillez tout d'abord sélectionner un catalogue (Pricebook).<br />
+        2- Sélectionnez ensuite les produits à ajouter.<br />
+        <br />
+        <i><small>(No product available on the opportunity)</small></i>
+      </div>
+    </template>
+  </template>
+</template>  

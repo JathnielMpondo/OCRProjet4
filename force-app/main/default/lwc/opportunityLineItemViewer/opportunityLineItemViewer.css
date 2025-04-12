@@ -1,0 +1,15 @@
+.cell-warning {
+    background-color: #ffe0e0;
+    font-weight: bold;
+    color: red;
+  }
+  
+  .no-data-message {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    background-color: #f8f8f8;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+  }
+  
