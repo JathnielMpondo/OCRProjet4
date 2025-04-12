@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <labels>
+        <fullName>Nomduproduit</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Nom du produit</shortDescription>
+        <value>Nom du produit</value>
+    </labels>
+    <labels>
+        <fullName>Nomduproduit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Name</shortDescription>
+        <value>Product Name</value>
+    </labels>
+
+    <labels>
+        <fullName>Quantite</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Quantité</shortDescription>
+        <value>Quantité</value>
+    </labels>
+    <labels>
+        <fullName>Quantite</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quantity</shortDescription>
+        <value>Quantity</value>
+    </labels>
+
+    <labels>
+        <fullName>PrixUnitaire</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Prix unitaire</shortDescription>
+        <value>Prix unitaire</value>
+    </labels>
+    <labels>
+        <fullName>PrixUnitaire</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unit Price</shortDescription>
+        <value>Unit Price</value>
+    </labels>
+
+    <labels>
+        <fullName>PrixTotal</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Prix total</shortDescription>
+        <value>Prix Total</value>
+    </labels>
+    <labels>
+        <fullName>PrixTotal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total Price</shortDescription>
+        <value>Total Price</value>
+    </labels>
+
+    <labels>
+        <fullName>QuantiteEnStock</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Quantité en stock</shortDescription>
+        <value>Quantité en stock</value>
+    </labels>
+    <labels>
+        <fullName>QuantiteEnStock</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quantity in stock</shortDescription>
+        <value>Quantity in stock</value>
+    </labels>
+
+    <labels>
+        <fullName>Supprimer</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Supprimer</shortDescription>
+        <value>Supprimer</value>
+    </labels>
+    <labels>
+        <fullName>Supprimer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+
+    <labels>
+        <fullName>VoirProduit</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Voir produit</shortDescription>
+        <value>Voir produit</value>
+    </labels>
+    <labels>
+        <fullName>VoirProduit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>See product</shortDescription>
+        <value>See product</value>
+    </labels>
+
+    <labels>
+        <fullName>MessageQuantiteProbleme</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Problème de quantité</shortDescription>
+        <value>Vous avez au moins une ligne avec un problème de quantité, veuillez supprimer cette ligne ou réduire sa quantité.</value>
+    </labels>
+    <labels>
+        <fullName>MessageQuantiteProbleme</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quantity issue</shortDescription>
+        <value>You have at least one line with a quantity problem, please delete this line or reduce its quantity.</value>
+    </labels>
+
+    <labels>
+        <fullName>MessageContactAdmin</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Contact administrateur</shortDescription>
+        <value>Si vous avez absolument besoin de plus de produits, veuillez contacter votre Système administrateur.</value>
+    </labels>
+    <labels>
+        <fullName>MessageContactAdmin</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact admin</shortDescription>
+        <value>If you absolutely need more products, please contact your system administrator.</value>
+    </labels>
+
+    <labels>
+        <fullName>OpportuniteProduits</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Opportunité produits</shortDescription>
+        <value>Opportunité produits</value>
+    </labels>
+    <labels>
+        <fullName>OpportuniteProduits</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity products</shortDescription>
+        <value>Opportunity products</value>
+    </labels>
+
+    <labels>
+        <fullName>ErreurMajOpportunite</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Erreur mise à jour opportunité</shortDescription>
+        <value>Votre opportunité ne peut pas être mise à jour car vous avez un souci de quantités sur vos lignes.</value>
+    </labels>
+    <labels>
+        <fullName>ErreurMajOpportunite</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity update error</shortDescription>
+        <value>Your opportunity cannot be updated because you have a quantity problem on your lines.</value>
+    </labels>
+
+    <labels>
+        <fullName>AucuneLigneProduit</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Pas de lignes produits</shortDescription>
+        <value>Vous n'avez aucune ligne de produits pour le moment. 1. Veuillez tout d'abord sélectionner un Catalogue (Pricebook) 2. Sélectionnez ensuite les produits à ajouter.</value>
+    </labels>
+    <labels>
+        <fullName>AucuneLigneProduit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No product lines</shortDescription>
+        <value>You don't have any product lines at the moment. 1. First select a Catalog (Pricebook) 2. Then select the products you wish to add.</value>
+    </labels>
+
+</CustomLabels>
