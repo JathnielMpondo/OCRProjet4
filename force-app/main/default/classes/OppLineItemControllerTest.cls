@@ -1,7 +1,7 @@
 @isTest
 private class OppLineItemControllerTest {
     @isTest
-    static void testGetOppLineItemByOppId_WithValidId() {
+    static void TestGetOppLineItemByOppId_WithValidId() {
         // 1. Créer un produit
         Product2 product = new Product2(
             Name = 'Produit Test',

@@ -1,15 +1,37 @@
 .cell-warning {
-    background-color: #ffe0e0;
-    font-weight: bold;
-    color: red;
-  }
-  
-  .no-data-message {
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
-    background-color: #f8f8f8;
-    border: 1px dashed #ccc;
-    border-radius: 6px;
-  }
-  
+  background-color: #ffe0e0;
+  font-weight: bold;
+  color: red;
+}
+
+.quantity-overstock {
+  color: red;
+  font-weight: bold;
+}
+
+.delete-column-warning {
+  border: 2px solid red;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.error-highlight {
+  background-color: #fff4e5;
+  border-left: 6px solid orange;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #b05d00;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.no-data-message {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  background-color: #f8f8f8;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+}
