@@ -4,6 +4,11 @@
   color: red;
 }
 
+.quantity-ok {
+  color: green;
+  font-weight: bold;
+}
+
 .quantity-overstock {
   color: red;
   font-weight: bold;
@@ -16,12 +21,12 @@
 }
 
 .error-highlight {
-  background-color: #fff4e5;
+  background-color: #b05d00;
   border-left: 6px solid orange;
   padding: 1rem;
   font-weight: bold;
   font-size: 0.95rem;
-  color: #b05d00;
+  color:  #fff4e5;
   border-radius: 6px;
   margin-bottom: 1rem;
 }

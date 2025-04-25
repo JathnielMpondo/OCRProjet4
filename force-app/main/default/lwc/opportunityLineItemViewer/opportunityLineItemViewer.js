@@ -94,39 +94,39 @@ export default class OpportunityLineItemViewer extends LightningElement { // on 
         this.loadData(); // on appelle la méthode pour charger les données
     }
 
-    loadData() { // on définit une méthode pour charger les données
-        getOppLineItemByOppId({ opportunityId: this.recordId }) // on appelle la méthode Apex pour récupérer les lignes d'opportunité
+    loadData() {
+        getOppLineItemByOppId({ opportunityId: this.recordId })
             .then(data => {
-                this.opportunityLines = data.map(item => { // on mappe les données récupérées pour créer un tableau d'objets
-                    const isOverstock = item.Product2.QuantityInStock__c < item.Quantity; // on vérifie si la quantité en stock est inférieure à la quantité commandée
-
+                this.opportunityLines = data.map(item => {
+                    const stock = item.Product2.QuantityInStock__c;
+                    const quantity = item.Quantity;
+                    const isOverstock = quantity > stock;
+    
                     return {
                         id: item.Id,
                         productId: item.Product2Id,
                         productName: item.Product2.Name,
                         unitPrice: item.UnitPrice,
                         totalPrice: item.TotalPrice,
-                        quantity: item.Quantity,
-                        quantityStyle: isOverstock ? 'quantity-overstock' : '',
-                        stock: item.Product2.QuantityInStock__c,
-                        stockWarning: isOverstock ? 'cell-warning' : '', // on applique un style conditionnel à la cellule de stock
+                        quantity: quantity,
+                        quantityStyle: isOverstock ? 'quantity-overstock' : 'quantity-ok',
+                        stock: stock,
+                        stockWarning: isOverstock ? 'cell-warning' : '',
                         deleteStyle: isOverstock ? 'delete-column-warning' : ''
                     };
                 });
-
-                this.hasError = this.opportunityLines.some( // on vérifie si au moins une ligne a une erreur
-                    l => l.stock < l.quantity // on vérifie si la quantité en stock est inférieure à la quantité commandée
-                );
-
+    
+                this.hasError = this.opportunityLines.some(line => line.stock < line.quantity);
+    
                 if (this.hasError) {
                     this.errorMessage =
                         "⚠️ Vous avez au moins une ligne avec un problème de quantité. Veuillez supprimer cette ligne ou réduire sa quantité. Si vous avez absolument besoin de plus de produits, veuillez contacter votre administrateur système.";
                 }
             })
             .catch(error => {
-                this.showToast('Erreur', error.body.message, 'error'); // on affiche un message d'erreur si la récupération des données échoue
+                this.showToast('Erreur', error.body.message, 'error');
             });
-    }
+    }    
 
     handleRowAction(event) { // on définit une méthode pour gérer les actions sur les lignes du tableau
         // on récupère l'action et la ligne sur laquelle l'utilisateur a cliqué
