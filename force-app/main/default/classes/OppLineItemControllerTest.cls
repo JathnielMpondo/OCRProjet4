@@ -1,5 +1,6 @@
 @isTest
 private class OppLineItemControllerTest {
+
     @isTest
     static void TestGetOppLineItemByOppId_WithValidId() {
         // 1. Créer un produit
@@ -10,7 +11,7 @@ private class OppLineItemControllerTest {
         );
         insert product;
 
-        // 2. Ajouter une entrée dans le Pricebook Standard (obligatoire !)
+        // 2. Ajouter une entrée dans le Pricebook Standard
         Id standardPbId = Test.getStandardPricebookId();
         PricebookEntry standardEntry = new PricebookEntry(
             Product2Id = product.Id,
@@ -61,8 +62,60 @@ private class OppLineItemControllerTest {
 
     @isTest
     static void testGetOppLineItemByOppId_WithNullId() {
+        // Appel de la méthode avec un Id nul
         List<OpportunityLineItem> result = OppLineItemController.getOppLineItemByOppId(null);
         System.assertNotEquals(null, result);
         System.assertEquals(0, result.size());
+    }
+
+    @isTest
+    static void testDeleteOpportunityLineItem() {
+        // 1. Créer un produit
+        Product2 product = new Product2(
+            Name = 'Produit à supprimer',
+            IsActive = true,
+            QuantityInStock__c = 5
+        );
+        insert product;
+
+        // 2. Récupérer le Pricebook standard
+        Id standardPbId = Test.getStandardPricebookId();
+        PricebookEntry standardEntry = new PricebookEntry(
+            Product2Id = product.Id,
+            Pricebook2Id = standardPbId,
+            UnitPrice = 80,
+            IsActive = true
+        );
+        insert standardEntry;
+
+        // 3. Créer une opportunité
+        Opportunity opp = new Opportunity(
+            Name = 'Opp suppression',
+            StageName = 'Prospecting',
+            CloseDate = Date.today().addDays(7),
+            Pricebook2Id = standardPbId
+        );
+        insert opp;
+
+        // 4. Créer une ligne d'opportunité
+        OpportunityLineItem oli = new OpportunityLineItem(
+            OpportunityId = opp.Id,
+            Quantity = 1,
+            UnitPrice = 80,
+            PricebookEntryId = standardEntry.Id
+        );
+        insert oli;
+
+        // 5. Vérification avant suppression
+        System.assertEquals(1, [SELECT COUNT() FROM OpportunityLineItem WHERE Id = :oli.Id]);
+
+        // 6. Appel de la méthode à tester
+        Test.startTest();
+        OppLineItemController.deleteOpportunityLineItem(oli.Id);
+        Test.stopTest();
+
+        // 7. Vérification après suppression
+        Integer count = [SELECT COUNT() FROM OpportunityLineItem WHERE Id = :oli.Id];
+        System.assertEquals(0, count, 'La ligne d\'opportunité aurait dû être supprimée');
     }
 }
